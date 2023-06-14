@@ -6,26 +6,23 @@ namespace nutrition.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    /* An action called index 
+      Automatically the action because of the template configurations
+    
+      endpoints:
+      /Home
+      /
+      /Home/Index
+    */
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
+    /* this object type requests the rendering of a view 
+     
+       knows View() --> Views/[Controller]/Index
+                        Views/Shared
+    */
+    public ViewResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }

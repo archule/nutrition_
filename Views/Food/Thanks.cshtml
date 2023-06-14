@@ -1,0 +1,23 @@
+@model nutrition.Models.Food
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+        <p>Thanks for adding, @Model.name!</p>
+        @if (Model?.calories >= 500 ) {
+        @: This item is a meal (500+ calories)
+    } else {
+        @: This item is a snack (under 500 calories)
+    }
+    </div>
+</body>
+</html>

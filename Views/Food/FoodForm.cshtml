@@ -1,0 +1,25 @@
+@model nutrition.Models.Food
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <form asp-controller="Food" asp-action="Add" method="post">
+        <div>
+            <label asp-for="name">Your name:</label>
+            <input asp-for="name" />
+        </div>
+        <div>
+            <label asp-for="calories">Calories:</label>
+            <input asp-for="calories" />
+        </div>
+        <button type="submit">Submit Food item</button>
+    </form>
+</body>
+</html>
