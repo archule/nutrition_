@@ -7,10 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="/css/styles.css"/>
 </head>
 <body>
     <form asp-controller="Food" asp-action="Add" method="post">
+        <div asp-validation-summary="All"></div>
         <div>
             <label asp-for="name">Your name:</label>
             <input asp-for="name" />
@@ -18,6 +19,15 @@
         <div>
             <label asp-for="calories">Calories:</label>
             <input asp-for="calories" />
+        </div>
+        <div>
+            <label asp-for="isExpensive">Is it expensive?</label>
+            <select asp-for="isExpensive">
+                <option value="">Choose an option</option>
+                <option value="true">It's expensive</option>
+                <option value="false">It's Cheap'n</option>
+
+            </select>
         </div>
         <button type="submit">Submit Food item</button>
     </form>

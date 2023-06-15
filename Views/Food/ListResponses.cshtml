@@ -1,0 +1,30 @@
+@model IEnumerable<nutrition.Models.Food>
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h2>Here is the list of people attending the party</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Calories</th>
+        </tr>
+    @foreach (nutrition.Models.Food r in Model!) {
+        <tr>
+            <td>@r.name</td>
+            <td>@r.calories</td>
+            <td>@r.isExpensive</td>
+        </tr>
+    }
+    </thead>
+</table>
+</body>
+</html>
